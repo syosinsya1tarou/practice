@@ -1,0 +1,6 @@
+streamlit
+pandas
+matplotlib
+sklearn
+datetime
+japanize_matplotlib
