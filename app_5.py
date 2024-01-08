@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import japanize_matplotlib
 from sklearn.linear_model import LinearRegression
+import numpy as np
 import datetime
 
 st.title("売上予測") # タイトル
@@ -35,6 +36,10 @@ if uploaded_file is not None:
 
         # 予測値を計算
         y_pred = model.predict(X)
+
+        # MAPEを計算
+        mape = np.mean(np.abs((y - y_pred) / y)) * 100
+        st.write(f'選択した期間のMAPE：{mape:.2f}')
 
         # グラフを描画
         plt.figure(figsize=(12, 6))
