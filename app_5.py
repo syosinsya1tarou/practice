@@ -24,7 +24,7 @@ if uploaded_file is not None:
     df_selected = df.loc[mask]
 
     if df_selected.empty:
-        st.write('日付が無効です。再選択してください')
+        st.markdown('<p style="color:red;font-size:20px;font-weight:bold;">日付が無効です。再選択してください</p>', unsafe_allow_html=True)
     else:
         X = df_selected.iloc[:, 2:-1] # 説明変数
         y = df_selected.iloc[:, 1] # 目的変数（売上）
